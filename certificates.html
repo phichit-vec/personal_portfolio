@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - My Portfolio</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+    <script>
+        const starCount = 100;
+        const colors = [
+            'white', 
+            'rgb(132,0,255)', 
+            'cyan', 
+            'yellow', 
+            'magenta', 
+            'lightblue', 
+            'orange'
+        ];
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = `${Math.random() * 2 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            star.style.background = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(star);
+        }
+    </script>
+    
+    <header>
+        <nav>
+            <h1 class="logo">MY PORTFOLIO</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="certificates.html" class="active">Certificates</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="certificates-main">
+        <section class="certificates-hero">
+            <div class="hero-content">
+                <h1>My <span>Certificates</span></h1>
+                <p>A collection of my professional certifications and achievements that showcase my skills and expertise.</p>
+            </div>
+        </section>
+        
+        <section class="certificates-content">
+            <div class="certificates-container">
+                <div class="certificates-grid">
+                    <!-- Certificate Card 1 -->
+                    <div class="certificate-card">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <img src="logo_debsirin.png" alt="Debsirin School Logo" class="logo-image">
+                            </div>
+                            <h3>Education certificate</h3>
+                        </div>
+                        <div class="certificate-details">
+                            <p class="issuer">Issued by: Educational Institution</p>
+                            <p class="date">2018 March 30</p>
+                            <p class="description">The certificate of Debsirin school</p>
+                            <div class="certificate-badges">
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-cert-btn" onclick="openCertificateModal('certificate_of_debsirin.jpg', 'Debsirin School Certificate')">View Certificate</a>
+                        </div>
+                    </div>
+                    <!-- Certificate Card 2 -->
+                    <div class="certificate-card">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <img src="logo_college.jpg" alt="College Logo" class="logo-image">
+                            </div>
+                            <h3>Education Certificate</h3>
+                        </div>
+                        <div class="certificate-details">
+                            <p class="issuer">Issued by: Bournemouth and Poole college</p>
+                            <p class="date">2016 October 26</p>
+                            <p class="description">Exchange student at Bournemouth and Poole college</p>
+                            <div class="certificate-badges">
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-cert-btn" onclick="openCertificateModal('certificate_of_exchange.jpg', 'Exchange Certificate')">View Certificate</a>
+                        </div>
+                    </div>
+                    <!-- Certificate Card 3 -->
+                    <div class="certificate-card">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <img src="logo_huawei.jpg" alt="Huawei Logo" class="logo-image">
+                            </div>
+                            <h3>Huawei Certificate</h3>
+                        </div>
+                        <div class="certificate-details">
+                            <p class="issuer">Issued by: Huawei Technologies</p>
+                            <p class="date">2024 June 15</p>
+                            <p class="description">Huawei technology certification demonstrating Data Management and Analysis Course</p>
+                            <div class="certificate-badges">
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-cert-btn" onclick="openCertificateModal('certificate_of_Huawei1.jpg', 'Huawei Certificate')">View Certificate</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate Card 4 -->
+                    <div class="certificate-card">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <img src="logo_huawei.jpg" alt="Huawei Logo" class="logo-image">
+                            </div>
+                            <h3>Huawei Certificate</h3>
+                        </div>
+                        <div class="certificate-details">
+                            <p class="issuer">Issued by: Huawei Technologies</p>
+                            <p class="date">2024 June 15</p>
+                            <p class="description">Huawei technology certification demonstrating Data Management and Analysis CRA Training Program</p>
+                            <div class="certificate-badges">
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-cert-btn" onclick="openCertificateModal('certificate_of_Huawei2.jpg', 'Huawei Certificate')">View Certificate</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate Card 5 -->
+                    <div class="certificate-card">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <img src="logo_samsung.png" alt="Samsung Logo" class="logo-image">
+                            </div>
+                            <h3>Samsung Certificate</h3>
+                        </div>
+                        <div class="certificate-details">
+                            <p class="issuer">Issued by: Samsung Electronics</p>
+                            <p class="date">2025 June 04</p>
+                            <p class="description">Samsung technology certification demonstating introduction to artificial intelligence in the workplace.</p>
+                            <div class="certificate-badges">
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-cert-btn" onclick="openCertificateModal('certificate_of_samsung.jpg', 'Samsung Technology Certificate')">View Certificate</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate Card 6 -->
+                    <div class="certificate-card">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <img src="logo_google.jpg" alt="Google Logo" class="logo-image">
+                            </div>
+                            <h3>Google Certificate</h3>
+                        </div>
+                        <div class="certificate-details">
+                            <p class="issuer">Issued by: Google</p>
+                            <p class="date">2025 September 12</p>
+                            <p class="description">Google Educator certifications demonstating the knowledge, skills, and basic competencies needed to use Google AI in education.</p>
+                            <div class="certificate-badges">
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-cert-btn" onclick="openCertificateModal('certificate_of_google.jpg', 'Google Certificate')">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievements-section">
+                    <h2>Other Achievements without Certificates</h2>
+                    <div class="achievements-list">
+                        <div class="achievement-item" onclick="openCertificateModal('acheivement_1.png', 'Google Cloud - Introduction to Generative AI')">
+                            <div class="achievement-icon">
+                                <img src="logo_google.jpg" alt="Google Logo" class="achievement-logo">
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Google Cloud </h4>
+                                <p>Introduction to Generative AI by Google Cloud</p>
+                                <small>2025 August 13</small>
+                            </div>
+                        </div>
+                        <div class="achievement-item" onclick="openCertificateModal('acheivement_2.png', 'Google Cloud - Introduction to Large Language Model')">
+                            <div class="achievement-icon">
+                                <img src="logo_google.jpg" alt="Google Logo" class="achievement-logo">
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Google Cloud</h4>
+                                <p>Introduction to Large Language Model</p>
+                                <small>2025 August 13</small>
+                            </div>
+                        </div>
+                        <div class="achievement-item" onclick="openCertificateModal('acheivement_3.png', 'Google Cloud - Introduction to AI and Machine Learning')">
+                            <div class="achievement-icon">
+                                <img src="logo_google.jpg" alt="Google Logo" class="achievement-logo">
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Google Cloud</h4>
+                                <p>Introduction to AI and Machine Learning on Google Cloud</p>
+                                <small>2025 August 15</small>
+                            </div>
+                        </div>
+                        <div class="achievement-item" onclick="openCertificateModal('acheivement_4.png', 'Google Cloud - Introduction to Image Generation')">
+                            <div class="achievement-icon">
+                                <img src="logo_google.jpg" alt="Google Logo" class="achievement-logo">
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Google Cloud</h4>
+                                <p>Introduction to Image Generation</p>
+                                <small>2025 August 15</small>
+                            </div>
+                        </div>
+                        <div class="achievement-item" onclick="openCertificateModal('acheivement_5.png', 'Google Cloud - Vector Search and Embeddings')">
+                            <div class="achievement-icon">
+                                <img src="logo_google.jpg" alt="Google Logo" class="achievement-logo">
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Google Cloud</h4>
+                                <p>Vector Search and Embeddings</p>
+                                <small>2025 August 31</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal" onclick="closeCertificateModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeCertificateModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Certificate</h2>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Certificate" class="certificate-image">
+            </div>
+            <div class="modal-footer">
+                <button class="download-btn" onclick="downloadCertificate()">Download PDF</button>
+                <button class="close-btn" onclick="closeCertificateModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Certificate Modal Functions
+        function openCertificateModal(imageSrc, title) {
+            const modal = document.getElementById('certificateModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalImage.src = imageSrc;
+            modalTitle.textContent = title;
+            modal.style.display = 'block';
+            
+            // Add animation class
+            setTimeout(() => {
+                modal.classList.add('modal-show');
+            }, 10);
+        }
+        
+        function closeCertificateModal() {
+            const modal = document.getElementById('certificateModal');
+            modal.classList.remove('modal-show');
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        function downloadCertificate() {
+            // Open PDF version
+            window.open('Deb.pdf', '_blank');
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeCertificateModal();
+            }
+        });
+    </script>
+</body>
+</html>

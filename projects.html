@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Portfolio</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+    <script>
+        const starCount = 100;
+        const colors = [
+            'white', 
+            'rgb(132,0,255)', 
+            'cyan', 
+            'yellow', 
+            'magenta', 
+            'lightblue', 
+            'orange'
+        ];
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = `${Math.random() * 2 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            star.style.background = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(star);
+        }
+    </script>
+    
+    <header>
+        <nav>
+            <h1 class="logo">MY PORTFOLIO</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="projects-main">
+        <section class="projects-hero">
+            <div class="hero-content">
+                <h1>My <span>Projects</span></h1>
+                <p>Explore my latest projects and technical accomplishments that demonstrate my skills and creativity.</p>
+            </div>
+        </section>
+        
+        <section class="projects-filter">
+            <div class="filter-container">
+                <h3>Filter by Category:</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="Chatbot">Chatbot</button>
+                    <button class="filter-btn" data-filter="Game">Game</button>
+                    <button class="filter-btn" data-filter="Software">Software</button>
+                    <button class="filter-btn" data-filter="other">Other</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="projects-content">
+            <div class="projects-container">
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card" data-category="Software">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">Live Demo</a>
+                                    <a href="#" class="project-link">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Health App project</h3>
+                            <p class="project-category">Desktop Software</p>
+                            <p class="project-description">
+                                This software use like a health assistance to suggest food, calculate calories per portion, design user workout plan. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 2 -->
+                    <div class="project-card" data-category="Chatbot">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">LineQRCODE</a>
+                                    <a href="#" class="project-link">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Restock Chatbot</h3>
+                            <p class="project-category">Chatbot</p>
+                            <p class="project-description">
+                                This bot was designed to help user check the home's stock.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Cloudflare</span>
+                                <span class="tech-tag">Line Developer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card" data-category="Game">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">Live Demo</a>
+                                    <a href="#" class="project-link">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Health App project</h3>
+                            <p class="project-category">Game</p>
+                            <p class="project-description">
+                                This software use like a health assistance to suggest food, calculate calories per portion, design user workout plan. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Project filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+    <script>
+        const starCount = 100;
+        const colors = [
+            'white', 
+            'rgb(132,0,255)', 
+            'cyan', 
+            'yellow', 
+            'magenta', 
+            'lightblue', 
+            'orange'
+        ];
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = `${Math.random() * 2 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            star.style.background = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(star);
+        }
+    </script>
+    
+    <header>
+        <nav>
+            <h1 class="logo">MY PORTFOLIO</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="about-main">
+        <section class="about-hero">
+            <div class="about-container">
+                <div class="profile-section">
+    <div 
+        style="
+            width:200px;
+            height:200px;
+            border-radius:50%;
+            overflow:hidden;
+            border:3px solid rgb(80, 200, 200);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:none;
+            box-shadow: 0 0 20px rgba(80, 200, 200, 0.5), 0 0 40px rgba(120, 240, 240, 0.3);
+        "
+    >
+        <img src="ee2f7ca6-bc7f-4c50-858d-04ecbb006d8a.png" 
+             alt="Profile Picture" 
+             style="
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                object-position:center;
+                display:block;
+             ">
+    </div>
+    <div class="profile-info">
+        <h1>About <span>Me</span></h1>
+        <h2>Phichit Wetkuntumrong</h2>
+        <p class="role">Student</p>
+    </div>
+</div>
+
+
+</div>
+
+            </div>
+        </section>
+        
+        <section class="about-content">
+            <div class="content-container">
+                <div class="bio-section">
+                    <h3>My background</h3>
+                    <p>
+                        Welcome to my portfolio website. I am Phichit Wetkuntumrong or you can call me Tae. I am graduated from Debsirin school. I have a passion for technology and programming.
+                    </p>
+                    <p>
+                        [Add your personal story here - your background, what drives you, your career journey, and your aspirations.]
+                    </p>
+                </div>
+                
+                <div class="skills-section">
+                    <h3>Skills & Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Coding skills</h4>
+                            <ul>
+                                <li>Cloudflare</li>
+                                <li>Git/Github</li>
+                                <li>Programming Languages</li>
+                                <li>- Python - JavaScript - C# - C</li>
+                                <li>Scratch</li>
+                                <li>Web Development</li>
+                                <li>- HTML - CSS</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Other Skills</h4>
+                            <ul>
+                                <li>Adobe</li>
+                                <li> - Adobe Photoshop - Adobe Premiere Pro</li>
+                                <li>Canva</li>
+                                <li>Planning and mapping CCTV Systems</li>
+                                <li> - Configue IP camera & Milestone Systems</li>
+                                <li>Microsoft office</li>
+                                <li> - Excel -PowerPoint -Word</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-section">
+                    <h3>Education & Background</h3>
+                    <div class="education-item">
+                        <h4>High School</h4>
+                        <p class="year">2015-2019</p>
+                        <p class="institution">Debsirin school</p>
+                        <p class="description">Major: Math-English</p>
+                        <h4></h4>
+                        <h4>Middle School</h4>
+                        <p class="year">2012-2015</p>
+                        <p class="institution">Kanjanapisek Wittayalai Nakhon Pathom</p>
+                        <h4></h4>
+                        <h4>Primary School</h4>
+                        <p class="year">2004-2012</p>
+                        <p class="institution">Phratamnaksuankularb Mahamongkol school</p>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <h3>Contact</h3>
+                    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                    <div class="contact-info">
+                        <p>E-mail: phichit.vec@gmail.com</p>
+                        <p>Github: <a href="https://github.com/phichit-vec" target="_blank">phichit-vec</a></p>
+                        <p>Phone: +66 95 709 8901</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 MIST. All rights reserved.</p>
+    </footer>
+</body>
+</html>

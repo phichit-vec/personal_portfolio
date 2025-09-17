@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Home</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <div class="star star1"></div>, 
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+<script>
+const starCount = 100;
+const colors = [
+  'white', 
+  'rgb(132,0,255)', 
+  'cyan', 
+  'yellow', 
+  'magenta', 
+  'lightblue', 
+  'orange'
+];
+for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.width = `${Math.random() * 2 + 1}px`;
+    star.style.height = star.style.width;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.animationDelay = `${Math.random() * 2}s`;
+    star.style.background = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(star);
+}
+
+// Spacecraft Animation
+function createSpacecraft() {
+    const spacecraft = document.createElement('div');
+    spacecraft.className = 'spacecraft';
+    
+    // Add trail effect
+    const trail = document.createElement('div');
+    trail.className = 'spacecraft-trail';
+    spacecraft.appendChild(trail);
+    
+    // Random properties
+    const duration = Math.random() * 8 + 6; // 6-14 seconds
+    const delay = Math.random() * 5; // 0-5 seconds delay
+    const randomY = (Math.random() - 0.5) * 200; // Random vertical movement
+    const randomRotation = (Math.random() - 0.5) * 30; // Slight rotation
+    
+    // Set CSS custom properties
+    spacecraft.style.setProperty('--duration', `${duration}s`);
+    spacecraft.style.setProperty('--delay', `${delay}s`);
+    spacecraft.style.setProperty('--random-y', `${randomY}px`);
+    spacecraft.style.setProperty('--random-rotation', `${randomRotation}deg`);
+    
+    // Random starting position
+    spacecraft.style.top = `${Math.random() * 80 + 10}%`;
+    
+    // Add to page
+    document.body.appendChild(spacecraft);
+    spacecraft.classList.add('active');
+    
+    // Remove after animation
+    setTimeout(() => {
+        if (spacecraft.parentNode) {
+            spacecraft.parentNode.removeChild(spacecraft);
+        }
+    }, (duration + delay) * 1000);
+}
+
+// Create spacecraft at random intervals
+function startSpacecraftAnimation() {
+    // Create initial spacecraft
+    createSpacecraft();
+    
+    // Set random interval for next spacecraft
+    const nextInterval = Math.random() * 4000 + 2000; // 2-6 seconds
+    setTimeout(startSpacecraftAnimation, nextInterval);
+}
+
+// Start the spacecraft animation after page load
+setTimeout(startSpacecraftAnimation, 2000);
+</script>
+    <header>
+        <nav>
+            <h1 class="logo"> MY PORTFOLIO </h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to <span>My Portfolio</span></h2>
+            <p>Discover my journey, skills, and achievements through my work and projects.</p>
+            <div class="home-navigation">
+                <a href="about.html" class="btn">Learn About Me</a>
+                <a href="certificates.html" class="btn">View Certificates</a>
+                <a href="projects.html" class="btn">Explore Projects</a>
+            </div>
+        </section>
+        <section class="home-preview">
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <h3>About Me</h3>
+                    <p>To see what am I?</p>
+                    <a href="about.html">Read More →</a>
+                </div>
+                <div class="preview-card">
+                    <h3>Certificates</h3>
+                    <p>View my professional certifications and achievements.</p>
+                    <a href="certificates.html">View All →</a>
+                </div>
+                <div class="preview-card">
+                    <h3>Projects</h3>
+                    <p>Explore my latest projects and technical accomplishments.</p>
+                    <a href="projects.html">See Projects →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
