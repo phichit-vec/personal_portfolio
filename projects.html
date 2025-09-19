@@ -75,22 +75,21 @@
                     <!-- Project Card 1 -->
                     <div class="project-card" data-category="Software">
                         <div class="project-image">
-                            <img src="health_app.png" alt="Project 1 Image">
-                            <div class="project-placeholder">Project Image</div>
+                            <img src="health_app.png" alt="Health App Project" class="project-img" onclick="openProjectModal('project1')">
                             <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" onclick="openProjectModal('project1')">Live Demo</a>
+                                </div>
                             </div>
                         </div>
                         <div class="project-info">
-                            <h3>Health App project</h3>
+                            <h3>Health App Project</h3>
                             <p class="project-category">Desktop Software</p>
                             <p class="project-description">
-                                This software use like a health assistance to suggest food, calculate calories per portion, design user workout plan. 
+                                This software works as a health assistant to suggest food, calculate calories per portion, and design user workout plans. 
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">C</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">React</span>
                             </div>
                         </div>
                     </div>
@@ -98,16 +97,19 @@
                     <!-- Project Card 2 -->
                     <div class="project-card" data-category="Chatbot">
                         <div class="project-image">
-                            <img src="restock_chatbot.png" alt="Project 2 Image">
-                            <div class="project-placeholder">Project Image</div>
+                            <img src="restock_bot.png" alt="Restock Chatbot Project" class="project-img" onclick="openProjectModal('project2')">
                             <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" onclick="openProjectModal('project2')">Live demo</a>
+                                    <a href="#" class="project-link" onclick="openProjectModal('lineQR')">Test Line QR code</a>
+                                </div>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3>Restock Chatbot</h3>
                             <p class="project-category">Chatbot</p>
                             <p class="project-description">
-                                This bot was designed to help user check the home's stock.
+                                This bot was designed to help users check their home's stock and manage inventory efficiently.
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">JavaScript</span>
@@ -117,39 +119,66 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 3 -->
-                    <div class="project-card" data-category="Game">
-                        <div class="project-image">
-                            <div class="project-placeholder">Project Image</div>
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link">Live Demo</a>
-                                    <a href="#" class="project-link">Source Code</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Health App project</h3>
-                            <p class="project-category">Game</p>
-                            <p class="project-description">
-                                This software use like a health assistance to suggest food, calculate calories per portion, design user workout plan. 
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">C</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">React</span>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
         </section>
     </main>
     
+    <!-- Project Modals -->
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Health App Project - Live Demo</h2>
+                <span class="close" onclick="closeProjectModal('project1')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img src="images/health-assistance.jpg" alt="Health App Project" class="project-modal-image">
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="closeProjectModal('project1')">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Restock Chatbot Project - Demo</h2>
+                <span class="close" onclick="closeProjectModal('project2')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img src="restock_bot.png" alt="Restock Chatbot Project" class="project-modal-image">
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="closeProjectModal('project2')">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Line QR Code Modal -->
+    <div id="lineQR" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Line QR Code - Restock Chatbot</h2>
+                <span class="close" onclick="closeProjectModal('lineQR')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img src="line_qr.jpg" alt="Line QR Code for Restock Chatbot" class="project-modal-image">
+                <div class="project-modal-details">
+                    <p><strong>Scan this QR code to add the Restock Chatbot to your Line account!</strong></p>
+                    <p><strong>Features:</strong> Check home stock, manage inventory, get restocking reminders</p>
+                    <p><strong>Platform:</strong> Line Messaging API</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="closeProjectModal('lineQR')">Close</button>
+            </div>
+        </div>
+    </div>
+    
     <footer>
-        <p>&copy; 2025 MIST. All rights reserved.</p>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
     </footer>
     
     <script>
@@ -174,6 +203,41 @@
                     }
                 });
             });
+        });
+        
+        // Project Modal Functions
+        function openProjectModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('modal-show');
+            }, 10);
+        }
+        
+        function closeProjectModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('modal-show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        // Close modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target.classList.contains('modal')) {
+                const modalId = event.target.id;
+                closeProjectModal(modalId);
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                const openModals = document.querySelectorAll('.modal.modal-show');
+                openModals.forEach(modal => {
+                    closeProjectModal(modal.id);
+                });
+            }
         });
     </script>
 </body>
